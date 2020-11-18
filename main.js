@@ -133,9 +133,9 @@ console.log(a >= b)
 const score = Math.random() * 100
 console.log(`点数${score}`)
 if (score >= 90) {
-    console.log(5)
+    console.log("優秀")
 } else if (score >= 75) {
-    console.log(4)
+    console.log("そこそこ")
 } else {
     console.log("不可")
 }
@@ -176,7 +176,8 @@ anime2.forEach((animee) => {
 function cook(food1, food2) {
     console.log(food1 + "を切ります")
     console.log(`${food1}を炒めます`)
-    console.log(food2+"を入れて完成です")
+    console.log(food2 + "を入れて完成です")
+    console.log(food1 + "に"+food2+"を入れたら魔の料理が完成です")
 }
 cook("ピザ", "ysai") //←引数である
 // 引数は、関数の「呼び出しごとに違う部分」を穴埋めするようなイメージ
@@ -186,13 +187,38 @@ function bar() {
 }
 bar()
 
+
+function foo(a, b, c) {
+    console.log(`fooが引数${a}, ${b}, ${c}で呼び出された`)
+}
+
+foo(3,5,6)
+
 // 関数の戻り値
 function applyTax(price) {
     const result = price * 0.1
     return result
 }
-const tax = applyTax(12000)
+const tax = applyTax(1200) //taxという変数をapplytaxによって定義してる？！
 console.log(tax)
+
+
+// 関数の描き方のバリエーション
+// 今まで通りの↓
+function double(x) {
+  return x * 2
+}
+const jsa = double(5)
+console.log(jsa)
+
+// アロー関数
+const triple = (x) => {
+  return x * 3
+}
+
+const allow = triple(9)
+console.log(allow)
+
 
 // 
 // 課題
@@ -220,7 +246,8 @@ function scoring(score) {
     } else if (score >= 75) {
         const result1 = "良"
         return result1
-    } else {
+    } 
+    else {
         const result1 = "不可"
         return result1
     }
@@ -229,3 +256,32 @@ function scoring(score) {
 console.log(scoring(100)) //=> 秀
 console.log(scoring(80)) //=> 良
 console.log(scoring(13)) //=> 不可
+
+
+
+//課題3
+
+const scores = [13, 67, 18, 54, 30, 22, 99, 49, 21, 65]
+
+
+function scoring(score) {
+    
+        if (score >= 90) {
+            //   console.log("秀")
+            const result1 = "秀"
+            return result1
+        } else if (score >= 75) {
+            const result1 = "良"
+            return result1
+        } else {
+            const result1 = "不可"
+            return result1
+        }
+}
+// scoreの各要素をループさせて、それぞれの結果を表示する
+
+scores.forEach(function (scoring) {
+    const score = scores
+    return scoring()
+});
+console.log(scoring(scores))
